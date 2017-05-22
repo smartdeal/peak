@@ -81,9 +81,16 @@
             @include mn1200 {
                 font-size: 15px;
                 padding-right: 60px;
-                max-height: calc(100vh - 350px);
-                overflow: hidden;
             }
+        }
+    }
+}
+
+.fp-viewing {
+    .msection__body_brand {
+        @include mn1200 {
+            max-height: calc(100vh - 350px);
+            overflow: hidden;
         }
     }
 }
@@ -198,7 +205,6 @@
         @include mn992 {
             max-width: none;
             font-size: 0;
-            height: calc(100vh - 400px);
         }
     }
     &__item {
@@ -264,6 +270,14 @@
     }
     &__link:hover .b-mcatalog__desc {
         bottom: 0;
+    }
+}
+
+.fp-viewing {
+    .b-mcatalog__inner {
+        @include mn992 {
+            height: calc(100vh - 400px);
+        }
     }
 }
 
