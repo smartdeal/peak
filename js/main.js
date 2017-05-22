@@ -97,7 +97,7 @@ $(document).ready(function() {
         var fullpage__selector = '.fullpage__item';
         var fullpage__lastnum = $(fullpage__selector).length || 0;
         $(fullpage__selector).last().addClass(fullpage__selector.substring(1)+'__last');
-        if (fullpage__lastnum > 1 && $(window).height() > 1000 && $(window).width() >= 1200) {
+        if (fullpage__lastnum > 1 && $(window).height() > 1000 && $(window).width() >= 1250) {
             if ( !$( 'html' ).hasClass( 'fp-enabled' ) ) {
                 $('#fullpage').fullpage({
                     sectionSelector: fullpage__selector,

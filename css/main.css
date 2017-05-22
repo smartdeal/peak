@@ -5424,7 +5424,8 @@ div.prefooter-section {
 .wpcf7 .wpcf7-not-valid-tip {
   display: none !important; }
 .wpcf7 .wpcf7-validation-errors {
-  margin: 10px auto; }
+  margin: 10px auto;
+  display: none !important; }
 .wpcf7 .ajax-loader {
   position: absolute !important; }
 
@@ -5693,7 +5694,7 @@ blockquote {
     background-image: url(../img/bg-sec-5.jpg); }
   @media (min-width: 1200px) {
     .msection__in {
-      padding-top: 100px;
+      padding-top: 50px;
       padding-bottom: 70px; } }
   .msection__inner_brand {
     position: relative; }
@@ -5959,7 +5960,7 @@ blockquote {
       height: 100%;
       width: 0; }
   .b-mreviews__body {
-    height: 240px;
+    height: 210px;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6;
@@ -6161,7 +6162,8 @@ blockquote {
   margin: 0 auto 10px;
   max-width: 300px; }
   .category__img img {
-    max-height: 200px; }
+    max-height: 200px;
+    margin-bottom: 15px; }
 
 .catalog__item {
   background: url("") center no-repeat;
