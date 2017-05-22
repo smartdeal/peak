@@ -1,0 +1,123 @@
+.content__body_team {
+    border-top: 1px solid;
+}
+
+.team {
+    .nav-tabs {
+        padding-top: 200px;
+        background: url(../img/kamaz.jpg) center no-repeat;
+        background-size: cover;
+        transition: background .5s 0s;
+    }
+    .tab-content {
+        padding: 20px 0;
+    }
+    .nav-tabs > li > a {
+        background: white;
+        color: black;
+    }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus {
+        color: #fff;
+        background-color: #033a73;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    &__desc {
+        border-bottom: 1px solid;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    &__persons {
+        font-size: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    &__person {
+        width: 250px;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    &__photo {
+        background: url('') center no-repeat;
+        background-size: cover;
+        height: 200px;
+    }
+    &__name {
+        margin: 10px 0;
+        font-size: 1.4em;
+    }
+    &__position {
+        margin: 10px 0;
+    }
+    &__details {}
+}
+
+.detail {
+    &__item {
+        font-size: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity .5s 0s;
+        &.active {
+            padding: 30px 0;
+            max-height: none;
+            opacity: 1;
+        }
+    }
+    &__photo {
+        width: 230px;
+        height: 200px;
+        background: url('') center no-repeat;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: top;
+    }
+    &__text {
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 20px 0;
+        font-weight: 700;
+        @include mn768 {
+            width: calc(100% - 230px);
+            padding: 0 0 0 20px;
+            margin-bottom: 20px;
+        }
+    }
+    &__name,
+    &__date,
+    &__place {
+        margin-bottom: 10px;
+    }
+    &__desc {
+        font-weight: 400;
+    }
+    &.detail__imgs {
+        margin: 20px -10px;
+        font-size: 0;
+    }
+    &__imgs {
+        margin: 20px 0;
+    }
+    &__img {
+        display: inline-block;
+        width: 230px;
+        height: 200px;
+        background: url('') center no-repeat;
+        background-size: cover;
+        margin: 10px;
+    }
+}

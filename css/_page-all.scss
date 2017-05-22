@@ -1,0 +1,178 @@
+body {
+    background: $blue;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s 0s;
+    &.page-template-page-category,
+    &.page-template-page-product {
+        background: #023a73 url(../img/bg.jpg) top no-repeat;
+        background-size: cover;
+    }
+}
+
+h1 {
+    font-size: 36px;
+}
+
+a {
+    transition: all .5s 0s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.admin-bar {
+    // padding-top: 32px;
+    .mmenu {
+        @include mn1200 {
+            top: 32px;
+        }
+    }
+}
+
+html #wpadminbar {
+    @media (max-width: 600px) {
+        top: -46px;
+    }
+}
+
+.content {
+    padding-top: 170px;
+    padding-bottom: 250px;
+    background: url(../img/bg2.jpg) top no-repeat;
+    @include mn768 {
+        padding-top: 110px;
+    }
+    @include mn992 {
+        padding-top: 120px;
+    }
+    &__img {
+        background: url('') center no-repeat;
+        background-size: cover;
+        min-height: 200px;
+        position: relative;
+        margin-bottom: 20px;
+        a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    &__thumb-wrap {
+        margin: 20px 0;
+        text-align: center;
+    }
+    &__thumb {}
+}
+
+.fp-viewing .content {
+    padding-top: 0;
+    position: relative;
+}
+
+.fp-viewing-4 .msbottom__menus {
+    display: block;
+}
+
+.fp-viewing-4 .msection__in {
+    padding-bottom: 120px;
+}
+
+.slick-slide img {
+    margin: 0 auto;
+}
+
+.breadcrumbs {
+    margin: 20px 0;
+}
+
+.fp-enabled .breadcrumbs {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110px;
+}
+
+.page {
+    &__content {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 20px 0;
+    }
+}
+
+.fp-enabled .page__content {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    max-width: 100%;
+    text-align: center;
+    &_yellow {
+        color: $yellow;
+        border-color: $yellow;
+        &:hover {
+            color: #242424;
+            border-color: $yellow;
+            background: #ffce00;
+        }
+    }
+    &_pdf,
+    &_msds {
+        min-width: 170px;
+        margin: 10px 0;
+    }
+    &_pr-part,
+    &_msds {
+        color: white;
+        border-color: white;
+    }
+    &_pr-buy,
+    &_pr-part {
+        min-width: 270px;
+        margin: 10px;
+        @include mn992 {
+            margin: 0;
+        }
+    }
+    &_pr-part {
+        @include mn992 {
+            margin-left: 30px;
+        }
+    }
+}
+
+img {
+    &.alignleft {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: .5em;
+    }
+    &.aligncenter {
+        margin: 1em auto;
+    }
+    &.alignrught {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: .5em;
+    }
+}
+
+blockquote {
+    margin: 0 0 0 21%;
+    padding: 25px 0 10px 10px;
+    background: url(../img/blockquote.png) left top no-repeat;
+    font-size: 14px;
+    p {
+        margin: 0;
+    }
+}

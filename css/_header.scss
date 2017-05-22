@@ -1,0 +1,221 @@
+.mmenu {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    transition: all .5s 0s;
+    @include mn1200 {
+        position: fixed;
+    }
+    &.fixed {
+        @include mn1200 {
+            background: rgba(3, 56, 110, 0.8);
+            padding: 10px 0;
+        }
+        .logo {
+            transition: all .5s 0s;
+            @include mn1200 {
+                height: 60px;
+            }
+        }
+    }
+    &__logo {
+        text-align: center;
+    }
+    &__btel {
+        float: right;
+        margin: 7px 0;
+        @include mn768 {
+            flex-shrink: 0;
+            text-align: center;
+        }
+    }
+    &__tel {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        @include mn1200 {
+            &:before {
+                content: '\f095';
+                font-family: FontAwesome;
+                font-size: 14px;
+                margin-right: .7em;
+            }
+        }
+    }
+    &-items {
+        @include mn768 {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &-item {
+        @include mn1200 {
+            position: static;
+            float: none;
+        }
+    }
+}
+
+.navbar_peak {
+    margin: 0;
+    @include mn1200 {
+        font-size: 16px;
+    }
+    .navbar-header {
+        float: left;
+        @include mn768 {
+            display: none;
+        }
+    }
+    .navbar-toggle {
+        margin: 0;
+        .fa {
+            font-size: 20px;
+        }
+    }
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        z-index: 10;
+        @include mn768 {
+            position: static;
+        }
+    }
+    .nav {
+        background: #2e659d;
+        margin-top: 0;
+        margin-bottom: 0;
+        @include mn768 {
+            background: transparent;
+            float: none;
+        }
+        a {
+            color: inherit;
+            font-weight: inherit;
+            @include mn768 {
+                padding: 5px 10px;
+            }
+        }
+        .open > a {
+            background: transparent;
+            color: $yellow;
+        }
+        > li > a:hover,
+        > li > a:focus {
+            background: transparent;
+        }
+        > li > a:hover {
+            color: $yellow;
+        }
+    }
+    .caret {
+        display: none;
+        position: absolute;
+        border: 9px solid $yellow;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        left: 25px;
+        bottom: -32px;
+    }
+    .menu__row > a {
+        display: none;
+    }
+    @include mn992 {
+        .dropdown-menu {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+        #menu-glavnoe > .menu-item {
+            position: static;
+            .menu__row {
+                flex: 1 0 25%;
+            }
+            &>.dropdown-menu {
+                background-color: rgba(36, 36, 36, 0.9);
+                border: 1px solid #ffce00;
+                .dropdown-menu {
+                    display: block;
+                    position: static;
+                    font-size: 12px;
+                    font-weight: 500;
+                    @include mn992 {
+                        font-size: 14px;
+                    }
+                    a {
+                        white-space: normal;
+                    }
+                    > .active > a,
+                    > .active > a:hover,
+                    > .active > a:focus {
+                        background: transparent;
+                        border: 1px solid yellow;
+                        border-radius: 3px;
+                    }
+                    .menu__title {
+                        color: $yellow;
+                        font-size: 1.2em;
+                        margin-bottom: .4em;
+                    }
+                    .menu__new {
+                        padding-left: 55px;
+                        position: relative;
+                        &:before {
+                            content: 'new';
+                            position: absolute;
+                            background: yellow;
+                            color: black;
+                            padding: 0 7px;
+                            text-transform: uppercase;
+                            border-radius: 3px;
+                            left: 10px;
+                            top: 7px;
+                        }
+                    }
+                }
+            }
+            &>.dropdown-toggle {
+                ~ .dropdown-menu {
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    max-width: 940px;
+                    overflow: hidden;
+                    transition: all .5s 0s;
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    display: -ms-flex;
+                    display: -o-flex;
+                    display: flex;
+                    opacity: 0;
+                    visibility: hidden;
+                    @include mn1200 {
+                        max-width: 1140px;
+                    }
+                }
+                ~ .dropdown-menu:hover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                &:hover {
+                    .caret {
+                        display: block;
+                    }
+                    ~ .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}

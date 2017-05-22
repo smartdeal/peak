@@ -1,0 +1,33 @@
+.contacts {
+    &__title {
+        @include title;
+        text-align: center;
+    }
+    &__items {
+        font-size: 0;
+    }
+}
+
+.office {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    @include mn768 {
+        width: 33.33%;
+        text-align: left;
+    }
+    &__name {
+        color: $yellow;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    &__adr {margin-bottom: 10px;}
+    &__tels {
+        font-weight: 500;
+    }
+    &__tel {}
+}

@@ -1,0 +1,266 @@
+.product {
+    &__title {
+        margin: 0 0 10px;
+        h1 {
+            margin: 0;
+        }
+        &_cat {
+            text-align: center;
+        }
+    }
+    &__imgwr {
+        padding: 30px;
+        @include mn768 {
+            float: left;
+            width: 35%;
+            padding-left: 0;
+        }
+    }
+    &__img {
+        text-align: center;
+        background: url(../img/tovar-base.png) bottom no-repeat;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        @include mn768 {
+            padding-top: 40px;
+        }
+    }
+    &__dloads {
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 0;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        span {
+            text-transform: lowercase;
+        }
+    }
+    &__slogan {
+        padding: 10px 0;
+        text-align: center;
+    }
+    &__btnwr {
+        padding: 20px 0;
+        text-align: center;
+        @include mn992 {
+            text-align: left;
+        }
+    }
+    &__iso {
+        text-shadow: 0 1px 1px #7b7b7b;
+        color: #ffce00;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 15px 0;
+        &-item {
+            margin-right: 40px;
+        }
+    }
+    &__captions {
+        border-bottom: 1px solid #dadada;
+        font-family: "Istok Web", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 15px 0;
+        @include mn768 {
+            margin-left: 35%;
+            font-size: 20px;
+        }
+        @include mn1200 {
+            font-size: 24px;
+        }
+    }
+    &__sect-caption {
+        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 1em;
+        &_active {
+            color: $yellow;
+            border-bottom: 3px solid $yellow;
+        }
+    }
+    &__sects {}
+    &__sect {
+        margin: 20px 0;
+        &:first-child {
+            margin: 0;
+        }
+        &-title {
+            font-family: "Istok Web", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin: 15px 0;
+        }
+        &-desc {
+            margin: 15px 0;
+            &_allow {
+                font-family: "Istok Web", sans-serif;
+                font-size: 0;
+                p,
+                ul {
+                    font-size: 16px;
+                }
+                li {
+                    display: block;
+                    margin: .3em 0;
+                    &:before {
+                        content: '-';
+                        padding-right: .4em;
+                    }
+                    &:nth-child(odd) {
+                        @include mn768 {
+                            padding-right: 4%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__adv {
+        &-items {
+            font-family: "Istok Web", sans-serif;
+            font-size: 0;
+            counter-reset: adv;
+            display: table;
+        }
+        &-item {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            position: relative;
+            padding-left: 65px;
+            margin: .5em 0;
+            min-height: 2.7em;
+            @include mn992 {
+                width: 50%;
+            }
+            &:before {
+                counter-increment: adv;
+                content: "0" counter(adv);
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #a8a8a8;
+                font-size: 40px;
+                text-shadow: 0 0 3px #000, 0 0 3px #000, 0 0 3px #000, 0 0 2px #000;
+                line-height: 1;
+            }
+            &:nth-child(odd) {
+                @include mn992 {
+                    padding-right: 4%;
+                }
+            }
+        }
+        &-title {
+            color: $yellow;
+        }
+        &-txt {}
+    }
+}
+
+.category {
+    &__items {
+        font-size: 0;
+        text-align: center;
+        &_4 {
+            .category__item {
+                @include mn992 {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &__item {
+        font-size: 16px;
+        font-weight: 400;
+        display: inline-block;
+        vertical-align: top;
+        width: 300px;
+        max-width: 100%;
+        padding: 20px;
+        @include mn768 {
+            width: 50%;
+        }
+        @include mn992 {
+            width: 33.33%;
+        }
+        &:hover .category__title a {
+            color: $yellow;
+            text-decoration: underline;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        text-transform: uppercase;
+        @include mn1200 {
+            font-size: 22px;
+        }
+        a:hover {
+            color: $yellow;
+        }
+    }
+    &__img {
+        text-align: center;
+        background: url(../img/tovar-base.png) bottom no-repeat;
+        background-size: contain;
+        padding-bottom: 10px;
+        margin: 0 auto 10px;
+        max-width: 300px;
+        img {
+            max-height: 200px;
+        }
+    }
+    &__excerpt {}
+}
+
+.catalog {
+    &__items {}
+    &__item {
+        background: url('') center no-repeat;
+        background-size: cover;
+        padding: 20px 0;
+        &:nth-child(even) .category__img {
+            background-image: url(../img/tovar-base-grey.png);
+        }
+        &.fp-section {
+            // padding-top: 200px;
+        }
+    }
+    &__title {
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+.page-template-page-catalog {
+    &.admin-bar {
+        padding-top: 0;
+    }
+    .catalog__item:first-child {
+        // padding-top: 140px;
+    }
+    &.fp-viewing .catalog__item:first-child {
+        // padding-top: 0;
+    }
+}
+
+.category__items_6more {
+    .slick-arrow {
+        right: -50px;
+        background: rgba(38, 38, 38, 0.8);
+    }
+    .slick-prev {
+        left: -50px;
+    }
+}

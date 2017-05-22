@@ -1,0 +1,77 @@
+.slick-slider {
+    .slick-arrow {
+        font-size: 0;
+        position: absolute;
+        top: 50%;
+        margin-top: -21px;
+        right: 0;
+        width: 42px;
+        height: 42px;
+        display: block;
+        background: rgba(2, 50, 94, 0.8);
+        text-align: center;
+        border: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        z-index: 1;
+        @include mn768 {
+            right: -20px;
+        }
+        @include mn1200 {
+            right: -100px;
+        }
+        &:before {
+            content: '\f105';
+            font-size: 46px;
+            font-family: FontAwesome;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: .8;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 0;
+        }
+        &:hover {
+            color: $yellow;
+        }
+    }
+    .slick-prev {
+        left: 0;
+        right: auto;
+        @include mn768 {
+            left: -20px;
+        }
+        @include mn1200 {
+            left: -100px;
+        }
+        &:before {
+            content: '\f104';
+        }
+    }
+    .slick-dots {
+        text-align: center;
+        margin: 10px 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        button {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            font-size: 0;
+            border: 0;
+        }
+    }
+    .slick-active button {
+        background: $yellow;
+    }
+}

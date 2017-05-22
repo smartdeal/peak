@@ -1,0 +1,243 @@
+div.prefooter-section {
+    padding-bottom: 150px;
+    @include mn992 {
+        padding-bottom: 250px;
+    }
+}
+
+.msbottom {
+    font-size: 22px;
+    padding: 20px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &__inner {
+        position: relative;
+        @include mn768 {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: space-between;
+        }
+        &_last {
+            @include mn768 {
+                @include cf;
+                display: block;
+                padding-bottom: 30px;
+            }
+        }
+    }
+    a {
+        display: inline-block;
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+    &__menus {
+        position: relative;
+    }
+    &__item {
+        display: block;
+        text-align: center;
+        z-index: 1;
+    }
+    &__next {
+        display: none;
+        font-size: 24px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        @include mn768 {
+            display: block;
+        }
+        &_last {
+            bottom: 0;
+        }
+    }
+    &__social {
+        position: relative;
+        z-index: 2;
+        &_last {
+            @include mn768 {
+                float: left;
+            }
+        }
+    }
+    &__region {
+        position: relative;
+        z-index: 2;
+        &_last {
+            @include mn768 {
+                float: right;
+            }
+        }
+    }
+    &__region_link {
+        font-family: "Neo Sans Pro";
+        margin-right: 1em;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__social_link {
+        margin-right: .5em;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.fp-viewing .msbottom {
+    @include mn1200 {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    &__menus {
+        display: none;
+    }
+}
+
+.fp-last-slide .msbottom__menus {
+    display: block;
+}
+
+.link-popup {
+    color: $yellow;
+    &:hover {
+        color: $yellow;
+    }
+    &_call {
+        display: none;
+        @include mn768 {
+            display: inline-block;
+        }
+    }
+}
+
+.next {
+    &__link {
+        display: inline-block;
+        &_last {
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: calc(50% - 30px);
+                top: 20px;
+                right: 0;
+                height: 1px;
+                background: #fff;
+            }
+            &:before {
+                left: 0;
+            }
+        }
+    }
+    &__elem {
+        position: relative;
+        display: block;
+        width: 49px;
+        height: 50px;
+        &:before {
+            position: absolute;
+            display: block;
+            content: '';
+            left: 8px;
+            top: 1px;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #fff;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &_last {
+            &:before {
+                top: 4px;
+            }
+        }
+    }
+}
+
+.fp-viewing .next__elem .fa-angle-up {
+    line-height: 1.5;
+    padding-top: .1em;
+    &:before {
+        content: '\f107';
+    }
+}
+
+.fp-last-slide .next__elem .fa-angle-up {
+    padding-top: 0;
+    &:before {
+        content: '\f106';
+    }
+}
+
+.fmenu {
+    font-size: 14px;
+    display: none;
+    @include mn992 {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        padding-right: 20px;
+        &:nth-child(4) {
+            text-transform: uppercase;
+            color: $yellow;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    .menu {
+        &-item {
+            margin-bottom: 5px;
+            span {
+                display: block;
+                font-size: 12px;
+                text-transform: none;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    margin-top: 5px;
+    opacity: .8;
+}
+
+.fp-viewing .copyright {
+    display: none;
+}
+
+.fp-last-slide .copyright {
+    display: block;
+}
+
+.develop {
+    font-size: 14px;
+    text-align: center;
+    @include mn992 {
+        position: absolute;
+        bottom: 0;
+        right: 28px;
+    }
+}

@@ -1,0 +1,70 @@
+.where {
+    &__items {
+        margin: 20px 0;
+    }
+    &__item {
+        margin: 20px 0;
+    }
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        @include mn768 {
+            font-size: 28px;
+        }
+    }
+    &__map {
+        margin: 30px 0;
+        height: 200px;
+        @include mn550 {
+            height: 300px;
+        }
+        @include mn768 {
+            height: 400px;
+        }
+    }
+}
+
+.b-logos {
+    text-align: center;
+    font-size: 0;
+    margin: 0 -10px;
+    padding: 20px 0;
+    &__item {
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+        @include mn992 {
+            width: 25%;
+        }
+        &:hover .b-logos__img img {
+            transform: scale(1.2);
+        }
+    }
+    &__img {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        width: 200px;
+        height: 110px;
+        border: 1px solid white;
+        border-radius: 3px;
+        background: whitesmoke;
+        overflow: hidden;
+        @include mn992 {
+            width: 100%;
+        }
+    }
+    &__img img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        transition: transform .5s 0s;
+    }
+    &__link {
+        display: block;
+    }
+}

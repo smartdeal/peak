@@ -1,0 +1,110 @@
+.b-form {
+    padding-bottom: 30px;
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+.wpcf7 {
+    &-form {
+        text-align: center;
+    }
+    &-form-control-wrap {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        max-width: 290px;
+        padding: 10px;
+    }
+    &-form-control {
+        @extend .input;
+        &.wpcf7-not-valid {
+            border-color: red;
+        }
+    }
+    &-text {}
+    &-submit {
+        @extend .btn-submit;
+        margin: 10px;
+        text-transform: uppercase;
+    }
+    .wpcf7-response-output {
+        @include mn992 {
+            max-width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .wpcf7-not-valid-tip {
+        display: none !important;
+    }
+    .wpcf7-validation-errors {
+        margin: 10px auto;
+    }
+    .ajax-loader {
+        position: absolute !important;
+    }
+}
+
+.form_contacts {
+    max-width: 590px;
+    margin: 0 auto;
+    .wpcf7-form-control-wrap {
+        &.mail,
+        &.text {
+            max-width: 100%;
+        }
+    }
+}
+
+.form_about {
+    .wpcf7-form-control-wrap {
+        max-width: 280px;
+    }
+}
+
+.fancybox-wrap {
+    .fancybox-skin {
+        background: $blue;
+        border: 1px solid white;
+    }
+    .fancybox-close {
+        background: white;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        right: 0;
+        top: 0;
+        &:hover {
+            text-decoration: none;
+        }
+        &:before {
+            content: "\f00d";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            font-size: 22px;
+            left: 0;
+            right: 0;
+            position: absolute;
+            color: $blue;
+            line-height: 27px;
+        }
+    }
+}
+
+.pform {
+    background: $blue;
+    max-width: 400px;
+    &__title {
+        font-size: 30px;
+        text-align: center;
+        color: white;
+        margin: .2em 0.5em;
+    }
+}
