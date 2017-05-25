@@ -340,4 +340,19 @@ function filter_plugin_updates( $value ) {
 }
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
+function list_columns_func( $atts, $content = '' ){
+    $out = $content;
+    $count = $atts['count'];
+    $count_class = '';
+    if ($count) {
+        if (($count) == 1) $count_class = '_1';
+            else if (($count) == 2) $count_class = '_2';
+                    else if (($count) == 3) $count_class = '_3';
+                        else if (($count) == 4) $count_class = '_4';
+        if ($count_class) $out = '<div class="list_columns list_columns'.$count_class.'">'.$out.'</div>';
+    }
+    return $out;
+}
+add_shortcode('list_columns', 'list_columns_func');
+
 ?>

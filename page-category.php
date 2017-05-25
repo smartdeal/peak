@@ -23,7 +23,7 @@
                 </div>    
             <?php 
             $arg_posts =  array(
-                'orderby'      => 'none',
+                'orderby'      => 'menu_order',
                 'order'        => 'ASC',
                 'posts_per_page' => -1,
                 'post_type' => 'page',
@@ -34,7 +34,7 @@
             $query = new WP_Query($arg_posts);
             ?>
             <?php if ($query->have_posts() ): ?>
-                    <div class="category__items">
+                    <div class="category__items js-category__items">
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="category__item">
                             <div class="category__img">

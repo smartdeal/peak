@@ -18,6 +18,7 @@
 </head>
 
 <body id="to-top" <?php body_class(); ?>>
+    <?php edit_post_link(); ?>
     <span class="hidden" id="sait_url"><?php echo get_template_directory_uri(); ?></span>
     <div class="mmenu">
         <nav class="navbar navbar_peak" role="navigation">

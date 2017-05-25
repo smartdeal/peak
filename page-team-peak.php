@@ -1,6 +1,8 @@
+<?php
 /*
 * Template name: Команда
-
+*/
+?>
 <?php get_header(); ?>
 
 <div class="content" itemscope itemtype="http://schema.org/Article">

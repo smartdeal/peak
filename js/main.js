@@ -38,6 +38,7 @@ $(function() {
 });
 
 $(document).ready(function() {
+    if ($(window).height() < 1000) $('body').addClass('height_less_1000');
     $('body').css('opacity', '1');
     $('.fancybox').fancybox();
     $('.js-mslider').slick({
@@ -93,11 +94,26 @@ $(document).ready(function() {
         $(cur_person).addClass('active');
     });
 
+    // улучшаем внешний вид описания товаров и категорий
+    if ($('.js-category__items').length > 0){
+        $('.js-category__items').each(function(index, el) {
+            if ($(this).children().length == 4) $(this).addClass('category__items_4');
+        });
+    }
+
+    $('.js-product__sect-desc_allow ul, .js-product__sect-desc_use ul').each(function(index, el) {
+        var product_allow_list = $(this).find('li').length;
+        if ( product_allow_list > 0){
+            if (product_allow_list > 7) $(this).closest('.product__sect-desc').addClass('product__sect-desc_more');
+            if (product_allow_list > 14) $(this).closest('.product__sect-desc').addClass('product__sect-desc_muchmore');
+        }
+    });
+
     function init() {
         var fullpage__selector = '.fullpage__item';
         var fullpage__lastnum = $(fullpage__selector).length || 0;
         $(fullpage__selector).last().addClass(fullpage__selector.substring(1)+'__last');
-        if (fullpage__lastnum > 1 && $(window).height() > 1000 && $(window).width() >= 1250) {
+        if (fullpage__lastnum > 1 && $(window).height() > 880 && $(window).width() >= 1250) {
             if ( !$( 'html' ).hasClass( 'fp-enabled' ) ) {
                 $('#fullpage').fullpage({
                     sectionSelector: fullpage__selector,
@@ -158,36 +174,45 @@ $(document).ready(function() {
  ========================================================*/
 ;
 (function ($) {
-    var map = document.getElementById("map");
-    if (map) {
-        include('/js/api-maps.yandex.ru.js');
+    var map_dealer = document.getElementById("map");
+    if (map_dealer) {
+        if (!ymaps) include('/js/api-maps.yandex.ru.js');
         $(document).ready(function () {
-            var map = $('#map');
-            if (map.length > 0) {
-                ymaps.ready(init);
-                var myMap, 
-                    myPlacemark,
-                    curLat,
-                    curLong,
-                    curDesc;
+            get_map(map_dealer, where_dealers);
+        });
+    }
+    var map_store = document.getElementById("map_store");
+    if (map_store) {
+        if (!ymaps) include('/js/api-maps.yandex.ru.js');
+        $(document).ready(function () {
+            get_map(map_store,where_store_map);
+        });
+    }
+    function get_map(map_container, map_array){
+        if (map_container !== null) {
+            ymaps.ready(init);
+            var myMap, 
+                myPlacemark,
+                curLat,
+                curLong,
+                curDesc;
 
-                function init(){ 
-                    myMap = new ymaps.Map("map", {
-                        center: [61.582319, 98.112851],
-                        zoom: 3
-                    }); 
-                    for (var i = 0, l = where_dealers.length; i < l; i++) {
-                        curLat = where_dealers[i]['lat'];
-                        curLong = where_dealers[i]['long'];
-                        curDesc = where_dealers[i]['desc'];
-                        myPlacemark = new ymaps.Placemark([curLat, curLong], {
-                            balloonContent: curDesc
-                        });
-                        myMap.geoObjects.add(myPlacemark);
-                    }
+            function init(){ 
+                myMap = new ymaps.Map(map_container, {
+                    center: [61.582319, 98.112851],
+                    zoom: 3
+                }); 
+                for (var i = 0, l = map_array.length; i < l; i++) {
+                    curLat = map_array[i]['lat'];
+                    curLong = map_array[i]['long'];
+                    curDesc = map_array[i]['desc'];
+                    myPlacemark = new ymaps.Placemark([curLat, curLong], {
+                        balloonContent: curDesc
+                    });
+                    myMap.geoObjects.add(myPlacemark);
                 }
             }
-        });
+        }
     }
 })
 (jQuery);

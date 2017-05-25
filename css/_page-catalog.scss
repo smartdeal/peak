@@ -1,5 +1,7 @@
 .product {
-    font-size: 0;
+    @include mn768 {
+        font-size: 0;
+    }
     &__title {
         margin: 0 0 10px;
         h1 {
@@ -10,7 +12,7 @@
         }
     }
     &__imgwr {
-        padding: 30px;
+        padding: 10px 30px;
         @include mn768 {
             display: inline-block;
             width: 35%;
@@ -21,10 +23,9 @@
     }
     &__img {
         text-align: center;
-        background: url(../img/tovar-base.png) bottom no-repeat;
+        // background: url(../img/tovar-base.png) bottom no-repeat;
         padding-bottom: 10px;
         margin-bottom: 10px;
-
     }
     &__dloads {
         font-size: 16px;
@@ -75,14 +76,14 @@
     &__captions {
         border-bottom: 1px solid #dadada;
         font-family: "Istok Web", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
         margin: 15px 0;
         @include mn768 {
-            font-size: 20px;
+            font-size: 18px;
         }
-        @include mn1200 {
-            font-size: 24px;
+        @include mn992 {
+            font-size: 20px;
         }
     }
     &__sect-caption {
@@ -109,11 +110,12 @@
         }
         &-desc {
             margin: 15px 0;
+            &_use,
             &_allow {
                 font-family: "Istok Web", sans-serif;
                 font-size: 0;
                 p,
-                ul {
+                li {
                     font-size: 16px;
                 }
                 li {
@@ -123,10 +125,55 @@
                         content: '-';
                         padding-right: .4em;
                     }
-                    &:nth-child(odd) {
-                        @include mn768 {
-                            padding-right: 4%;
+                }
+            }
+            &_more {
+                @include mn768 {
+                    ul {
+                        margin: 0 -15px;
+                    }
+                    li {
+                        padding: 0 15px;
+                        width: 50%;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+                .list_columns_2 {
+                    @include mn768 {
+                        li {
+                            width: 50%;
                         }
+                    }
+                }
+                .list_columns_1 {
+                    @include mn768 {
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
+                .list_columns_3 {
+                    @include mn768 {
+                        li {
+                            width: 33.33%;
+                        }
+                    }
+                }
+                .list_columns_4 {
+                    @include mn768 {
+                        li {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+            &_muchmore {
+                @include mn1200 {
+                    li {
+                        width: 33.33%;
+                        display: inline-block;
+                        vertical-align: top;
                     }
                 }
             }
@@ -203,7 +250,8 @@
         }
         &:hover .category__title a {
             color: $yellow;
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid;
         }
     }
     &__title {
@@ -213,12 +261,13 @@
             font-size: 22px;
         }
         a:hover {
-            color: $yellow;
+            // color: $yellow;
+            // text-decoration: none;
         }
     }
     &__img {
         text-align: center;
-        background: url(../img/tovar-base.png) bottom no-repeat;
+        // background: url(../img/tovar-base.png) bottom no-repeat;
         background-size: contain;
         padding-bottom: 10px;
         margin: 0 auto 10px;
@@ -231,6 +280,10 @@
     &__excerpt {}
 }
 
+.fp-viewing .fullpage__item__last .category__items  {
+    padding-bottom: 150px;
+}
+
 .catalog {
     &__items {}
     &__item {
@@ -238,7 +291,7 @@
         background-size: cover;
         padding: 20px 0;
         &:nth-child(even) .category__img {
-            background-image: url(../img/tovar-base-grey.png);
+            // background-image: url(../img/tovar-base-grey.png);
         }
         &.fp-section {
             // padding-top: 200px;

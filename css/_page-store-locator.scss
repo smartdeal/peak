@@ -1,9 +1,7 @@
 .where {
-    &__items {
-        margin: 20px 0;
-    }
+    &__items {}
     &__item {
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
     &__title {
         text-align: center;
@@ -35,6 +33,7 @@
         display: inline-block;
         vertical-align: top;
         padding: 10px;
+        width: 50%;
         @include mn992 {
             width: 25%;
         }
@@ -48,15 +47,12 @@
         display: -ms-flex;
         display: -o-flex;
         display: flex;
-        width: 200px;
         height: 110px;
         border: 1px solid white;
         border-radius: 3px;
         background: whitesmoke;
         overflow: hidden;
-        @include mn992 {
-            width: 100%;
-        }
+        @include mn992 {}
     }
     &__img img {
         max-width: 100%;
@@ -66,5 +62,11 @@
     }
     &__link {
         display: block;
+    }
+}
+
+.page-id-10 .page__title h1 {
+    @include mn768 {
+        margin: 0;
     }
 }

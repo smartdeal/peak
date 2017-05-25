@@ -46,12 +46,7 @@
                         <?php wp_nav_menu( array('theme_location'    => 'footer4') ); ?>
                     </div>
                     <div class="fmenu__item">
-                        <form class="mc4wp-form">
-                            <div class="mc4wp-form-fields">
-                                <p><input type="email" name="EMAIL" placeholder="Ваш адрес email"></p>
-                                <p><input type="submit" value="Подписаться на новости"></p>
-                            </div>
-                        </form>
+                        <?php echo do_shortcode('[mc4wp_form id="3929"]'); ?>
                     </div>
                 </div>
                 <?php 

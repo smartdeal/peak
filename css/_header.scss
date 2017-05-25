@@ -185,10 +185,10 @@
             }
             &>.dropdown-toggle {
                 ~ .dropdown-menu {
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    max-width: 940px;
+                    width: 940px;
+                    left: 50%;
+                    margin-left: -470px;
+                    right: auto;
                     overflow: hidden;
                     transition: all .5s 0s;
                     display: -webkit-flex;
@@ -199,7 +199,8 @@
                     opacity: 0;
                     visibility: hidden;
                     @include mn1200 {
-                        max-width: 1140px;
+                        width: 1140px;
+                        margin-left: -570px;
                     }
                 }
                 ~ .dropdown-menu:hover {

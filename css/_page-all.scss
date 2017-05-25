@@ -11,7 +11,12 @@ body {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 28px;
+    margin: 10px 0;
+    line-height: 1;
+    @include mn768 {
+        font-size: 36px;
+    }
 }
 
 a {
@@ -20,6 +25,17 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+a sup {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.post-edit-link {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .admin-bar {
@@ -39,13 +55,14 @@ html #wpadminbar {
 
 .content {
     padding-top: 170px;
-    padding-bottom: 250px;
+    padding-bottom: 170px;
     background: url(../img/bg2.jpg) top no-repeat;
     @include mn768 {
         padding-top: 110px;
     }
     @include mn992 {
         padding-top: 120px;
+        padding-bottom: 250px;
     }
     &__img {
         background: url('') center no-repeat;
@@ -86,7 +103,9 @@ html #wpadminbar {
 }
 
 .breadcrumbs {
-    margin: 20px 0;
+    @include mn768 {
+        // margin: 20px 0;
+    }
 }
 
 .fp-enabled .breadcrumbs {
@@ -123,7 +142,16 @@ html #wpadminbar {
         &:hover {
             color: #242424;
             border-color: $yellow;
-            background: #ffce00;
+            background: $yellow;
+        }
+    }
+    &_white {
+        color: $white;
+        border-color: $white;
+        &:hover {
+            color: #242424;
+            border-color: $white;
+            background: $white;
         }
     }
     &_pdf,
@@ -131,7 +159,6 @@ html #wpadminbar {
         min-width: 170px;
         margin: 10px 0;
     }
-    &_pr-part,
     &_msds {
         color: white;
         border-color: white;

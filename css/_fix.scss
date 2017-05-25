@@ -1,0 +1,30 @@
+.height_less_1000 {
+    .catalog__title {
+        font-size: 32px;
+    }
+    .category__img img {
+        max-height: 150px;
+    }
+    .category__title {
+        font-size: 18px;
+    }
+    .msection__body_brand {
+        font-size: 14px;
+    }
+    .msection__title {
+        @include mn768 {
+            font-size: 32px;
+        }
+    }
+    .b-brand__body {
+        font-size: 13px;
+    }
+    .b-adv__txt {
+        @include mn768 {
+            font-size: 16px;
+        }
+    }
+    &.fp-viewing .fullpage__item__last .msection__inner {
+        padding-bottom: 80px;
+    }
+}

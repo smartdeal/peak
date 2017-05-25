@@ -78,11 +78,15 @@
         font-weight: 500;
         line-height: 1.37;
         &_brand {
+            font-weight: 400;
             @include mn1200 {
                 font-size: 15px;
                 padding-right: 60px;
             }
         }
+    }
+    &__desc_advantage {
+        font-weight: 400;
     }
 }
 
@@ -93,6 +97,10 @@
             overflow: hidden;
         }
     }
+}
+
+.fp-viewing .fullpage__item__last .msection__inner  {
+    padding-bottom: 150px;
 }
 
 .mslider {
@@ -176,10 +184,10 @@
         }
     }
     &__title {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 500;
         line-height: 1.3;
-        padding: 10px 0;
+        padding: 5px 0;
         text-align: center;
         @include mn1200 {
             text-align: left;
@@ -192,6 +200,9 @@
         font-size: 14px;
         @include mn1200 {
             padding-bottom: .5em;
+        }
+        p {
+            margin: 0;
         }
     }
 }
@@ -285,13 +296,14 @@
     &__items {
         padding: 30px 0;
         overflow: hidden;
-        margin: 0 -15px;
+        margin: 0 -10px;
         font-size: 0;
+        font-weight: 400;
     }
     &__item {
         margin-bottom: 1.6em;
-        padding-left: 95px;
-        padding-right: 15px;
+        padding-left: 90px;
+        padding-right: 10px;
         position: relative;
         display: inline-block;
         vertical-align: top;
@@ -314,7 +326,7 @@
     &__txt {
         font-size: 15px;
         @include mn768 {
-            font-size: 20px;
+            font-size: 18px;
         }
         span {
             color: $yellow;

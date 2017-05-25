@@ -8,6 +8,15 @@
     @include mn992 {
         display: inline-block;
     }
+    .mc4wp-form {
+        input {
+            width: 100%;
+            max-width: 200px;
+        }
+        .mc4wp-response {
+            font-size: .8em;
+        }
+    }
 }
 
 .widget {

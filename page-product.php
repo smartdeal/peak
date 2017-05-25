@@ -58,14 +58,14 @@
                                     <?php the_content(); ?>
                                 </div>
                                 <div class="product__btnwr">
-                                    <a class="btn btn_yellow btn_pr-buy" href="/where-buy">Купить</a>
+                                    <a class="btn btn_white btn_pr-buy" href="/store-locator">Купить</a>
                                     <a class="btn btn_yellow btn_pr-part" href="/contacts">Стать партнером</a>
                                 </div>
                             </div>
                             <?php if ($product_allow = get_field('allow')) { ?>
                                 <div id="product-allow" class="product__sect">
                                     <div class="product__sect-title">Допуски и соответствия</div>
-                                    <div class="product__sect-desc product__sect-desc_allow">
+                                    <div class="product__sect-desc product__sect-desc_allow js-product__sect-desc_allow">
                                         <?php echo $product_allow; ?>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                             <?php if ($product_use = get_field('use')) { ?>
                                 <div id="product-use" class="product__sect">
                                     <div class="product__sect-title">Применение</div>
-                                    <div class="product__sect-desc">
+                                    <div class="product__sect-desc product__sect-desc_use js-product__sect-desc_use">
                                         <?php echo $product_use; ?>
                                     </div>
                                 </div>

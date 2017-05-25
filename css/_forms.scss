@@ -17,7 +17,7 @@
         display: inline-block;
         vertical-align: top;
         width: 100%;
-        max-width: 290px;
+        max-width: 280px;
         padding: 10px;
     }
     &-form-control {
@@ -33,6 +33,7 @@
         text-transform: uppercase;
     }
     .wpcf7-response-output {
+        color: white;
         @include mn992 {
             max-width: 50%;
             margin-left: auto;
@@ -55,9 +56,12 @@
     max-width: 590px;
     margin: 0 auto;
     .wpcf7-form-control-wrap {
-        &.mail,
-        &.text {
-            max-width: 100%;
+        @include mn768 {
+            max-width: none;
+            &.nm,
+            &.tel {
+                    width: 50%;
+            }
         }
     }
 }
