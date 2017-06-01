@@ -1,7 +1,5 @@
 .product {
-    @include mn768 {
-        font-size: 0;
-    }
+    @include mn768 {}
     &__title {
         margin: 0 0 10px;
         h1 {
@@ -13,19 +11,17 @@
     }
     &__imgwr {
         padding: 10px 30px;
-        @include mn768 {
-            display: inline-block;
-            width: 35%;
-            vertical-align: top;
-            padding-left: 0;
-            font-size: 16px;
+        @include mn992 {
+            float: left;
         }
     }
     &__img {
         text-align: center;
-        // background: url(../img/tovar-base.png) bottom no-repeat;
         padding-bottom: 10px;
         margin-bottom: 10px;
+        @include mn1200 {
+            background: url(../img/tovar-base.png) bottom no-repeat;
+        }
     }
     &__dloads {
         font-size: 16px;
@@ -51,16 +47,11 @@
         padding: 20px 0;
         text-align: center;
         @include mn992 {
-            text-align: left;
+            // text-align: left;
         }
     }
     &__body {
-        @include mn768 {
-            font-size: 16px;
-            display: inline-block;
-            vertical-align: middle;
-            width: 65%;
-        }
+        @include mn768 {}
     }
     &__iso {
         text-shadow: 0 1px 1px #7b7b7b;
@@ -74,7 +65,7 @@
         }
     }
     &__captions {
-        border-bottom: 1px solid #dadada;
+        // border-bottom: 1px solid #dadada;
         font-family: "Istok Web", sans-serif;
         font-size: 14px;
         font-weight: 700;
@@ -84,15 +75,28 @@
         }
         @include mn992 {
             font-size: 20px;
+            // display: inline-block;
         }
     }
     &__sect-caption {
         text-transform: uppercase;
         display: inline-block;
         margin-right: 1em;
+        position: relative;
+        margin-bottom: 10px;
         &_active {
             color: $yellow;
             border-bottom: 3px solid $yellow;
+        }
+        &:before {
+            content: '';
+            display: block;
+            height: 1px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: -30px;
         }
     }
     &__sects {}
@@ -131,6 +135,7 @@
                 @include mn768 {
                     ul {
                         margin: 0 -15px;
+                        display: table;
                     }
                     li {
                         padding: 0 15px;
@@ -267,11 +272,13 @@
     }
     &__img {
         text-align: center;
-        // background: url(../img/tovar-base.png) bottom no-repeat;
         background-size: contain;
         padding-bottom: 10px;
         margin: 0 auto 10px;
         max-width: 300px;
+        @include mn1200 {
+            background: url(../img/tovar-base.png) bottom no-repeat;
+        }
         img {
             max-height: 200px;
             margin-bottom: 15px;
@@ -280,7 +287,7 @@
     &__excerpt {}
 }
 
-.fp-viewing .fullpage__item__last .category__items  {
+.fp-viewing .fullpage__item__last .category__items {
     padding-bottom: 150px;
 }
 

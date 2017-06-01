@@ -21,13 +21,13 @@
                 <div class="msbottom__item msbottom__next msbottom__next_last"><a href="#to-top" class="next__link next__link_last"><span class="next__elem next__elem_last"><i class="fa fa-angle-up"></i></span></a></div>
                 <div class="msbottom__item msbottom__region msbottom__region_last">
                     <?php if ($soc_link = get_field('option_brazil', 'option')): ?>
-                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link"><i class="fa fa-globe"></i> Brazil</a>
+                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link" rel=”nofollow”><i class="fa fa-globe"></i> Brazil</a>
                     <?php endif; ?>
                     <?php if ($soc_link = get_field('option_mexico', 'option')): ?>
-                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link"><i class="fa fa-globe"></i> Mexico</a>
+                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link" rel=”nofollow”><i class="fa fa-globe"></i> Mexico</a>
                     <?php endif; ?>
                     <?php if ($soc_link = get_field('option_usa', 'option')): ?>
-                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link"><i class="fa fa-globe"></i> USA</a>
+                        <a href="<?php echo $soc_link; ?>" class="msbottom__region_link" rel=”nofollow”><i class="fa fa-globe"></i> USA</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -65,5 +65,6 @@
         </div>
     </div>
     <?php wp_footer(); ?>
+    <?php the_field('option_code_bottom','option'); ?>
 </body>
 </html>

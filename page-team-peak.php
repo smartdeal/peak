@@ -34,6 +34,7 @@
     ?>
     <section class="page__content page__content_team">
         <div class="container">
+            <div class="content__title content__title_team">Более 30 лет в автоспорте.</div>
             <div class="content__list">
                 <div class="content__item">
                     <div class="team">

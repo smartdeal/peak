@@ -18,6 +18,7 @@
 </head>
 
 <body id="to-top" <?php body_class(); ?>>
+    <?php the_field('option_code_top','option'); ?>
     <?php edit_post_link(); ?>
     <span class="hidden" id="sait_url"><?php echo get_template_directory_uri(); ?></span>
     <div class="mmenu">
@@ -49,8 +50,16 @@
                             );
                         ?>
                     <!--/noindex-->
-                    <div class="mmenu__btel ">
-                        <div class="mmenu__tel"><a href="tel:<?php echo preg_replace("/[^0-9]/","",get_field('option_tel','option')); ?>" class="mmenu__tel-link"><?php the_field('option_tel','option'); ?></a></div>
+                    <div class="mmenu__btel">
+                        <div class="mmenu__tel">
+                            <a href="tel:<?php echo preg_replace("/[^0-9]/","",get_field('option_tel','option')); ?>" class="mmenu__tel-link"><?php the_field('option_tel','option'); ?></a>
+                            <div class="mmenu__search">
+                                <form action="<?php echo home_url(); ?>/" method="post">
+                                    <input type="text" name="s" placeholder="Поиск по сайту " class="mmenu__search-control">
+                                </form>
+                                <a class="mmenu__search-btn"></a>
+                            </div>                            
+                        </div>
                         <a href="#popup-form" class="link-popup link-popup_call fancybox">Заказать звонок</a>
                     </div>
                 </div>

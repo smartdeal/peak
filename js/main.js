@@ -1,4 +1,5 @@
 var dir_url= $('#sait_url').text();
+
 function include(scriptUrl) {
     document.write('<script src="'+dir_url + scriptUrl + '"></script>');
 }
@@ -38,7 +39,6 @@ $(function() {
 });
 
 $(document).ready(function() {
-    if ($(window).height() < 1000) $('body').addClass('height_less_1000');
     $('body').css('opacity', '1');
     $('.fancybox').fancybox();
     $('.js-mslider').slick({
@@ -94,6 +94,11 @@ $(document).ready(function() {
         $(cur_person).addClass('active');
     });
 
+    // открыть окно поиска в шапке
+    $('.mmenu__search-btn').click(function() {
+        $(this).closest('.mmenu__search').toggleClass('active');
+    });
+
     // улучшаем внешний вид описания товаров и категорий
     if ($('.js-category__items').length > 0){
         $('.js-category__items').each(function(index, el) {
@@ -110,10 +115,16 @@ $(document).ready(function() {
     });
 
     function init() {
+        var cur_width = $(window).width();
+        var cur_height = $(window).height();
+        console.log("cur_width", cur_width);
+        console.log("cur_height", cur_height);
+        if (cur_height < 1000) $('body').addClass('height_less_1000'); else $('body').removeClass('height_less_1000');
+        if (cur_width > 1200 && cur_height > 650 && cur_height < 880) $('body').addClass('height_less_880'); else $('body').removeClass('height_less_880');
         var fullpage__selector = '.fullpage__item';
         var fullpage__lastnum = $(fullpage__selector).length || 0;
         $(fullpage__selector).last().addClass(fullpage__selector.substring(1)+'__last');
-        if (fullpage__lastnum > 1 && $(window).height() > 880 && $(window).width() >= 1250) {
+        if (fullpage__lastnum > 1 && cur_height > 650 && cur_width >= 1230) {
             if ( !$( 'html' ).hasClass( 'fp-enabled' ) ) {
                 $('#fullpage').fullpage({
                     sectionSelector: fullpage__selector,

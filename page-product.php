@@ -27,7 +27,6 @@
                         <?php if ($product_pdf = get_field('pdf')): ?><a class="btn btn_yellow btn_pdf" href="<?php echo $product_pdf['url']; ?>">Описание</a><?php endif; ?>
                         <?php if ($product_msds = get_field('msds')): ?><a class="btn btn_yellow btn_msds" href="<?php echo $product_msds['url']; ?>">Паспорт безопасности</a><?php endif; ?>
                     </div>
-                    <div class="product__slogan">Все об антифризах. Профессионально.</div>
                 </div>
                 <div class="product__body">
                     <div class="product__title">

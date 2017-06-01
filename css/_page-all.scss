@@ -103,6 +103,8 @@ html #wpadminbar {
 }
 
 .breadcrumbs {
+    position: relative;
+    z-index: 100;
     @include mn768 {
         // margin: 20px 0;
     }
@@ -157,7 +159,7 @@ html #wpadminbar {
     &_pdf,
     &_msds {
         min-width: 170px;
-        margin: 10px 0;
+        margin: 10px;
     }
     &_msds {
         color: white;
@@ -168,12 +170,10 @@ html #wpadminbar {
         min-width: 270px;
         margin: 10px;
         @include mn992 {
-            margin: 0;
         }
     }
     &_pr-part {
         @include mn992 {
-            margin-left: 30px;
         }
     }
 }

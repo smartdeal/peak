@@ -42,7 +42,7 @@
                             <?php 
 
                             $args = array(
-                                'orderby'      => 'none',
+                                'orderby'      => 'menu_order',
                                 'order'        => 'ASC',
                                 'posts_per_page' => -1,
                                 'post_type' => 'page',
@@ -63,10 +63,12 @@
                                     <div class="category__img">
                                         <a href="<?php the_permalink(); ?>">
                                         <?php 
-                                            if (has_post_thumbnail())
+                                            if (has_post_thumbnail()) {
                                                 $cur_img = wp_get_attachment_image_url(get_post_thumbnail_id(),'large');
-                                            else
-                                                $cur_img = get_template_directory_uri().'/img/placeholder.png';
+                                            }
+                                            else {
+                                                $cur_img = get_template_directory_uri().'/img/no_photo.png';
+                                            }
                                         ?>
                                             <img class="category__picture" src="<?php echo $cur_img; ?>">
                                         </a>

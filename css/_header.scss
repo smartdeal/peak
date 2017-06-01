@@ -1,10 +1,10 @@
 .mmenu {
     position: absolute;
-    z-index: 99;
+    z-index: 101;
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px 0;
+    padding-top: 20px;
     transition: all .5s 0s;
     @include mn1200 {
         position: fixed;
@@ -36,6 +36,7 @@
         display: block;
         font-size: 20px;
         font-weight: 600;
+        position: relative;
         @include mn1200 {
             &:before {
                 content: '\f095';
@@ -43,6 +44,10 @@
                 font-size: 14px;
                 margin-right: .7em;
             }
+        }
+        &-link {
+            display: inline-block;
+            vertical-align: middle;
         }
     }
     &-items {
@@ -60,6 +65,47 @@
         @include mn1200 {
             position: static;
             float: none;
+        }
+    }
+    .mmenu__search {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20px;
+        line-height: 0;
+        &.active {
+            .mmenu__search-control {
+                width: 220px;
+                opacity: 1;
+            }
+        }
+        &-control {
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            top: -2px;
+            right: 25px;
+            padding: 5px;
+            background: #033a73;
+            font-size: 14px;
+            width: 0;
+            opacity: 0;
+            z-index: 1;
+            transition: width 1s 0s, opacity .5s 0s;
+        }
+        &-btn {
+            width: 17px;
+            height: 17px;
+            background: url(../img/icon-search.png) center no-repeat;
+            background-size: contain;
+            display: inline-block;
+            border: 0;
+            color: transparent;
+            padding: 0;
+            &:hover {
+                color: transparent;
+                background: url(../img/icon-search.png) center no-repeat;
+                background-size: contain;
+            }
         }
     }
 }
@@ -135,85 +181,98 @@
             border: 0;
             box-shadow: none;
         }
-        #menu-glavnoe > .menu-item {
-            position: static;
-            .menu__row {
-                flex: 1 0 25%;
-            }
-            &>.dropdown-menu {
-                background-color: rgba(36, 36, 36, 0.9);
-                border: 1px solid #ffce00;
-                .dropdown-menu {
-                    display: block;
-                    position: static;
-                    font-size: 12px;
-                    font-weight: 500;
-                    @include mn992 {
-                        font-size: 14px;
+        #menu-glavnoe {
+            &> .menu-item {
+                position: static;
+                .menu__row {
+                    flex: 1 0 25%;
+                }
+                &>.dropdown-menu {
+                    left: auto;
+                    background-color: rgba(36, 36, 36, 0.9);
+                    border: 1px solid #ffce00;
+                    .menu-item {
+                        flex-basis: 100%;
                     }
-                    a {
-                        white-space: normal;
-                    }
-                    > .active > a,
-                    > .active > a:hover,
-                    > .active > a:focus {
-                        background: transparent;
-                        border: 1px solid yellow;
-                        border-radius: 3px;
-                    }
-                    .menu__title {
-                        color: $yellow;
-                        font-size: 1.2em;
-                        margin-bottom: .4em;
-                    }
-                    .menu__new {
-                        padding-left: 55px;
-                        position: relative;
-                        &:before {
-                            content: 'new';
-                            position: absolute;
-                            background: yellow;
-                            color: black;
-                            padding: 0 7px;
-                            text-transform: uppercase;
+                    .dropdown-menu {
+                        display: block;
+                        position: static;
+                        font-size: 12px;
+                        font-weight: 500;
+                        @include mn992 {
+                            font-size: 14px;
+                        }
+                        a {
+                            white-space: normal;
+                        }
+                        > .active > a,
+                        > .active > a:hover,
+                        > .active > a:focus {
+                            background: transparent;
+                            border: 1px solid yellow;
                             border-radius: 3px;
-                            left: 10px;
-                            top: 7px;
+                        }
+                        .menu__title {
+                            color: $yellow;
+                            font-size: 1.2em;
+                            margin-bottom: .4em;
+                        }
+                        .menu__new {
+                            padding-left: 55px;
+                            position: relative;
+                            &:before {
+                                content: 'new';
+                                position: absolute;
+                                background: yellow;
+                                color: black;
+                                padding: 0 7px;
+                                text-transform: uppercase;
+                                border-radius: 3px;
+                                left: 10px;
+                                top: 7px;
+                            }
+                        }
+                    }
+                }
+                &>.dropdown-toggle {
+                    ~ .dropdown-menu {
+                        overflow: hidden;
+                        transition: all .5s 0s;
+                        display: -webkit-flex;
+                        display: -moz-flex;
+                        display: -ms-flex;
+                        display: -o-flex;
+                        display: flex;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    ~ .dropdown-menu:hover {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    &:hover {
+                        .caret {
+                            display: block;
+                        }
+                        ~ .dropdown-menu {
+                            opacity: 1;
+                            visibility: visible;
                         }
                     }
                 }
             }
-            &>.dropdown-toggle {
-                ~ .dropdown-menu {
+            &>.menu-item-25 {
+                &>.dropdown-toggle ~ .dropdown-menu {
                     width: 940px;
                     left: 50%;
                     margin-left: -470px;
                     right: auto;
-                    overflow: hidden;
-                    transition: all .5s 0s;
-                    display: -webkit-flex;
-                    display: -moz-flex;
-                    display: -ms-flex;
-                    display: -o-flex;
-                    display: flex;
-                    opacity: 0;
-                    visibility: hidden;
                     @include mn1200 {
                         width: 1140px;
                         margin-left: -570px;
                     }
-                }
-                ~ .dropdown-menu:hover {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                &:hover {
-                    .caret {
-                        display: block;
-                    }
-                    ~ .dropdown-menu {
-                        opacity: 1;
-                        visibility: visible;
+                    .menu-item {
+                        flex-basis: 25%;
                     }
                 }
             }

@@ -27,4 +27,171 @@
     &.fp-viewing .fullpage__item__last .msection__inner {
         padding-bottom: 80px;
     }
+    .b-about {
+        &__main {
+            h2 {
+                margin: 10px 0;
+            }
+            hr {
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+.height_less_880 {
+    .mmenu__logo {
+        height: 70px;
+    }
+    &.fp-viewing {
+        .msection {
+            &__title {
+                font-size: 28px;
+                line-height: 1;
+                &_brand {
+                    top: -36px;
+                }
+            }
+            &__inner_brand {
+                padding: 25px;
+            }
+            &__body {
+                p {
+                    margin-bottom: .5em;
+                }
+                &_brand {
+                    line-height: 1.2;
+                    max-height: calc(100vh - 280px);
+                    padding-right: 30px;
+                }
+                &_advantage {
+                    line-height: 1;
+                }
+            }
+        }
+        .b-brand {
+            &__title {
+                font-size: 16px;
+            }
+            &__body {
+                font-size: 12px;
+            }
+        }
+        .b-mcatalog {
+            &__inner {
+                height: calc(100vh - 300px);
+                padding: 0 0 20px;
+            }
+            &__desc {
+                font-size: 26px;
+                height: 120px;
+            }
+        }
+        .b-adv {
+            &__items {
+                padding: 20px 0;
+            }
+            &__num {
+                font-size: 36px;
+            }
+            &__item {
+                    min-height: 60px;
+            }
+        }
+        .b-mreviews {
+            padding-bottom: 0;
+            &__title {
+                padding: 0;
+            }
+            &__body {
+                height: 150px;
+                line-height: 1.2;
+            }
+        }
+        .msection_reviews .b-form {
+            padding-bottom: 0;
+        }
+        .fmenu {
+            .menu-item {
+                margin-bottom: 0;
+            }
+            .mc4wp-form input {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+        .msbottom {
+            padding: 10px 0;
+            &__inner {
+                padding-bottom: 20px;
+            }
+        }
+        .next__link_last:before,
+        .next__link_last:after {
+            top: 20px;
+        }
+        .next__elem {
+            height: 40px;
+        }
+        .about {
+            &__title {
+                top: -18px;
+                font-size: 30px;
+                h1 {
+                    font-size: inherit;
+                }
+                &:before,
+                &:after {
+                    margin-top: -4px;
+                }
+            }
+            &__inner {
+                line-height: 1.2;
+                padding: 20px 120px 20px 20px;
+                margin-top: 60px;
+                width: calc(100% - 330px);
+                min-height: 400px;
+                &_last .logos {
+                    margin-bottom: 10px;
+                }
+            }
+            &__body .about__list {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                ul {
+                    font-size: 16px;
+                }
+            }
+            &__caption {
+                font-size: 26px;
+                margin: 10px 0;
+            }
+        }
+        .b-about {
+            &__items {
+                width: 460px;
+                right: -350px;
+            }
+            &__item {
+                padding-left: 55px;
+            }
+            &__main hr {
+                margin: 5px 0;
+            }
+        }
+        .category {
+            &__item {
+                padding: 10px;
+            }
+            &__title {
+                font-size: 16px;
+            }
+            &__img {
+                background-size: 70%;
+                img {
+                    max-height: 100px;
+                }
+            }
+        }
+    }
 }

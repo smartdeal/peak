@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 
 <div class="content" itemscope itemtype="http://schema.org/Article">
     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
@@ -45,7 +45,7 @@
                 <?php endif; ?>
                 <?php if( have_rows('where_store') ): ?>
                     <div class="where__item">
-                        <div class="where__title">Розничные магазиные</div>
+                        <div class="where__title">Розничные магазины</div>
                         <div class="where__body">
                             <div class="b-logos">
                             <?php while ( have_rows('where_store') ) : the_row(); ?>
