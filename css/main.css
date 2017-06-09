@@ -5828,6 +5828,9 @@ blockquote {
         .msection__body_brand {
           font-size: 15px;
           padding-right: 60px; } }
+    @media (min-width: 1400px) {
+      .msection__body_advantage {
+        font-size: 18px; } }
   .msection__desc_advantage {
     font-weight: 400; }
 
@@ -5991,6 +5994,8 @@ blockquote {
 @media (min-width: 992px) {
   .fp-viewing .b-mcatalog__inner {
     height: calc(100vh - 400px); } }
+.fp-viewing .b-mcatalog__img {
+  min-height: 0; }
 
 .b-adv__items {
   padding: 30px 0;
@@ -6264,7 +6269,7 @@ blockquote {
   text-transform: uppercase; }
   @media (min-width: 1200px) {
     .category__title {
-      font-size: 22px; } }
+      font-size: 20px; } }
 .category__img {
   text-align: center;
   background-size: contain;
@@ -6724,6 +6729,9 @@ blockquote {
 @media (min-width: 768px) {
   .height_less_1000 .b-adv__txt {
     font-size: 16px; } }
+@media (min-width: 1200px) {
+  .height_less_1000 .b-adv__txt {
+    font-size: 18px; } }
 .height_less_1000.fp-viewing .fullpage__item__last .msection__inner {
   padding-bottom: 80px; }
 .height_less_1000 .b-about__main h2 {
@@ -6747,7 +6755,12 @@ blockquote {
   max-height: calc(100vh - 280px);
   padding-right: 30px; }
 .height_less_880.fp-viewing .msection__body_advantage {
-  line-height: 1; }
+  line-height: 1;
+  font-size: 16px; }
+  @media (min-width: 1200px) {
+    .height_less_880.fp-viewing .msection__body_advantage {
+      line-height: 1.2;
+      font-size: 17px; } }
 .height_less_880.fp-viewing .b-brand__title {
   font-size: 16px; }
 .height_less_880.fp-viewing .b-brand__body {
@@ -6764,6 +6777,9 @@ blockquote {
   font-size: 36px; }
 .height_less_880.fp-viewing .b-adv__item {
   min-height: 60px; }
+@media (min-width: 1200px) {
+  .height_less_880.fp-viewing .b-adv__text {
+    font-size: inherit; } }
 .height_less_880.fp-viewing .b-mreviews {
   padding-bottom: 0; }
   .height_less_880.fp-viewing .b-mreviews__title {
@@ -6825,5 +6841,17 @@ blockquote {
   background-size: 70%; }
   .height_less_880.fp-viewing .category__img img {
     max-height: 100px; }
+@media (min-width: 1200px) {
+  .height_less_880 #to-advantage .msection__in {
+    padding-bottom: 20px; } }
+
+@media (max-width: 767px) {
+  .mmenu__btel {
+    float: none;
+    text-align: center; }
+
+  .mmenu .mmenu__search {
+    float: right;
+    margin-top: 5px; } }
 
 /*# sourceMappingURL=main.css.map */

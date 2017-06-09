@@ -23,6 +23,9 @@
         @include mn768 {
             font-size: 16px;
         }
+        @include mn1200 {
+            font-size: 18px;
+        }
     }
     &.fp-viewing .fullpage__item__last .msection__inner {
         padding-bottom: 80px;
@@ -66,6 +69,11 @@
                 }
                 &_advantage {
                     line-height: 1;
+                    font-size: 16px;
+                    @include mn1200 {
+                        line-height: 1.2;
+                        font-size: 17px;
+                    }
                 }
             }
         }
@@ -95,7 +103,12 @@
                 font-size: 36px;
             }
             &__item {
-                    min-height: 60px;
+                min-height: 60px;
+            }
+            &__text {
+                @include mn1200 {
+                    font-size: inherit;
+                }
             }
         }
         .b-mreviews {
@@ -193,5 +206,23 @@
                 }
             }
         }
+    }
+    #to-advantage .msection__in {
+        @include mn1200 {
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.height_less_750 {}
+
+@media (max-width: 767px) {
+    .mmenu__btel {
+        float: none;
+        text-align: center;
+    }
+    .mmenu .mmenu__search {
+        float: right;
+        margin-top: 5px;
     }
 }

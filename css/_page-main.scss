@@ -84,6 +84,12 @@
                 padding-right: 60px;
             }
         }
+        &_advantage {
+            @include mn1400 {
+                font-size: 18px;
+            }
+        }
+
     }
     &__desc_advantage {
         font-weight: 400;
@@ -289,6 +295,9 @@
         @include mn992 {
             height: calc(100vh - 400px);
         }
+    }
+    .b-mcatalog__img {
+        min-height: 0;
     }
 }
 

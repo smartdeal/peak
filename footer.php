@@ -66,5 +66,6 @@
     </div>
     <?php wp_footer(); ?>
     <?php the_field('option_code_bottom','option'); ?>
+    <div id="size" style="position:absolute;top:0;left:0;color: #aaa;"></div>
 </body>
 </html>
