@@ -1,3 +1,7 @@
+.page__title {
+    margin-top: 20px;
+}
+
 .height_less_1000 {
     .catalog__title {
         font-size: 32px;
@@ -28,7 +32,7 @@
         }
     }
     &.fp-viewing .fullpage__item__last .msection__inner {
-        padding-bottom: 80px;
+        padding-bottom: 40px;
     }
     .b-about {
         &__main {
@@ -56,7 +60,7 @@
                 }
             }
             &__inner_brand {
-                padding: 25px;
+                padding: 35px 25px 10px;
             }
             &__body {
                 p {
@@ -199,12 +203,6 @@
             &__title {
                 font-size: 16px;
             }
-            &__img {
-                background-size: 70%;
-                img {
-                    max-height: 100px;
-                }
-            }
         }
     }
     #to-advantage .msection__in {
@@ -214,7 +212,32 @@
     }
 }
 
-.height_less_750 {}
+.height_less_750 {
+    .category {
+        &__img {
+            background-size: 70%;
+            img {
+                max-height: 100px;
+            }
+        }
+    }
+}
+
+.product__sect-caption:hover {
+    text-decoration: none;
+    color: $yellow;
+}
+
+.team {
+    .nav-tabs > li {
+        margin-top: 5px;
+    }
+}
+
+img.content__img {
+    background: none;
+    min-height: 0;
+}
 
 @media (max-width: 767px) {
     .mmenu__btel {
@@ -224,5 +247,33 @@
     .mmenu .mmenu__search {
         float: right;
         margin-top: 5px;
+    }
+    .product__sect-caption {
+        border-bottom: 1px solid;
+    }
+    .product__sect-caption:before {
+        display: none;
+    }
+}
+
+.msection__body_reviews {
+    margin-top: 20px;
+}
+
+@media (min-width: 1900px) {
+    .msection__title_advantage {
+        margin-bottom: 10px;
+    }
+    .fp-enabled .breadcrumbs {
+        top: 120px;
+    }
+}
+
+.height_less_800.fp-viewing {
+    .category__img {
+        background-size: 80%;
+        img {
+            max-height: 125px;
+        }
     }
 }

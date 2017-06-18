@@ -203,22 +203,20 @@
             @include mn992 {
                 width: 50%;
             }
-            &:before {
-                counter-increment: adv;
-                content: "0" counter(adv);
-                position: absolute;
-                top: 0;
-                left: 0;
-                color: #a8a8a8;
-                font-size: 40px;
-                text-shadow: 0 0 3px #000, 0 0 3px #000, 0 0 3px #000, 0 0 2px #000;
-                line-height: 1;
-            }
             &:nth-child(odd) {
                 @include mn992 {
                     padding-right: 4%;
                 }
             }
+        }
+        &-num {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #a8a8a8;
+            font-size: 40px;
+            text-shadow: 0 0 3px #000, 0 0 3px #000, 0 0 3px #000, 0 0 2px #000;
+            line-height: 1;
         }
         &-title {
             color: $yellow;

@@ -37,8 +37,21 @@
             <div class="content__title content__title_team">Более 30 лет в автоспорте.</div>
             <div class="content__list">
                 <div class="content__item">
+                    <?php if (have_posts()) {while (have_posts()) { the_post(); ?>        
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="content__txt">
+                                <div class="content__desc">
+                                    <div class="content__body content__body_team" itemprop="articleBody"><?php the_content(); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }} ?>
+                </div>
+                <div class="content__item">
                     <div class="team">
-                        <ul class="nav nav-tabs"<?php echo $team_src; ?>>
+                        <ul class="nav nav-tabs">
                             <?php foreach ($team['type'] as $key => $team_one) { 
                                 if ($team_img = get_field('img', $team_one->taxonomy.'_'.$team_one->term_id )) $team_src = $team_img['sizes']['large'];
                                     else $team_src = '';
@@ -94,20 +107,6 @@
                             <?php } ?>
                         </div>
                     </div>
-                </div>
-                <div class="content__item">
-                    <?php if (have_posts()) {while (have_posts()) { the_post(); ?>        
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="content__txt">
-                                <div class="content__desc">
-                                    <div class="content__body content__body_team" itemprop="articleBody"><?php the_content(); ?></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <?php }} ?>
                 </div>
             </div>
         </div>

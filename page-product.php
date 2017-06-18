@@ -83,11 +83,13 @@
                                     <div class="product__sect-desc">
                                         <ul class="product__adv-items">
                                         <?php 
+                                            $num = 1;
                                             foreach ($product_adv as $k) {
-                                                echo '<li class="product__adv-item">';
+                                                echo '<li class="product__adv-item"><div class="product__adv-num">'.sprintf("%02d", $num).'</div>';
                                                 echo '<div class="product__adv-title">'.$k['title'].'</div>';
                                                 echo '<div class="product__adv-txt">'.$k['txt'].'</div>';
                                                 echo '</li>';
+                                                $num++;
                                             }
                                         ?>
                                         </ul>
