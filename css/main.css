@@ -6159,6 +6159,8 @@ blockquote {
     bottom: 0;
     left: 0;
     right: -30px; }
+  .product__sect-caption:last-child:before {
+    right: 0; }
 .product__sect {
   margin: 20px 0; }
   .product__sect:first-child {

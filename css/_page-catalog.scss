@@ -98,7 +98,11 @@
             left: 0;
             right: -30px;
         }
+        &:last-child:before {
+            right: 0;
+        }
     }
+
     &__sects {}
     &__sect {
         margin: 20px 0;
