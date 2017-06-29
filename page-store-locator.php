@@ -69,7 +69,11 @@
                         </div>
                     </div>
                 <?php endif; ?>
-                <?php if( have_rows('where_store_map') ): ?>
+                <?php if ($where_map1 = get_field('where_map_store')): ?>
+                        <div class="where__item where__store-map">
+                            <div class="where__body"><?php echo $where_map1; ?></div>
+                        </div>
+                <?php elseif( have_rows('where_store_map') ): ?>
                         <?php $where_store_map = array(); ?>
                         <div class="where__item js-where__store-map">
                             <div class="where__body">
@@ -87,7 +91,11 @@
                             var where_store_map = <?php echo json_encode($where_store_map); ?>;
                         </script>
                 <?php endif; ?>
-                <?php if( have_rows('where_dealers') ): ?>
+                <?php if ($where_map2 = get_field('where_map_dealer')): ?>
+                        <div class="where__item where__dealers-map"></div>
+                            <div class="where__title">Дилеры на карте</div>
+                            <div class="where__body"><?php echo $where_map2; ?></div>
+                <?php elseif( have_rows('where_dealers') ): ?>
                         <?php $where_dealers = array(); ?>
                         <div class="where__item js-where__dealers">
                             <div class="where__title">Дилеры на карте</div>
