@@ -10,10 +10,37 @@
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
     <link href="<?php echo get_template_directory_uri(); ?>/favicon.png" rel="icon"          type="image/png">
     <link href="<?php echo get_template_directory_uri(); ?>/favicon.png" rel="shortcut icon" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+    <noscript><link href="https://fonts.googleapis.com/css?family=Istok+Web" async="async" rel="stylesheet"></noscript>
+	<script>
+	(function(){
+		function addFont() {
+			var style = document.createElement('style');
+			style.rel = 'stylesheet';
+			document.head.appendChild(style);
+			style.textContent = localStorage.sourceSansPro;
+		}
+		try {
+			if (localStorage.sourceSansPro) {
+				addFont();
+			} else {
+				var request = new XMLHttpRequest();
+				request.open('GET', 'https://fonts.googleapis.com/css?family=Istok+Web', true);
+
+				request.onload = function() {
+					if (request.status >= 200 && request.status < 400) {
+						localStorage.sourceSansPro = request.responseText;
+						addFont();
+					}
+				}
+				request.send();
+			}
+		} catch(ex) {
+		}
+	}());
+	</script>
+
     <?php wp_head(); ?> 
 </head>
 
@@ -67,3 +94,4 @@
         </nav>
     </div>
 
+<?php setPostViews(get_the_ID()); ?>

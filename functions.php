@@ -38,9 +38,35 @@ function new_setup() {
         ) 
     );
     add_image_size( 'thumb1920', 1920 );
+	add_image_size( 'thumb720', 720 );
 }
 
 add_action( 'after_setup_theme', 'new_setup' );
+
+// просмотры
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
 
 function custom_post_type() {
 
@@ -355,4 +381,25 @@ function list_columns_func( $atts, $content = '' ){
 }
 add_shortcode('list_columns', 'list_columns_func');
 
+// отключаем поле сайт и переставляем поля
+function all_commentfields( $fields ) {
+	//var_dump($fields); // просмотр всех полей в переменной $fields
+ 
+	// сохраняем значение всех полей формы
+	$mycomment_field = $fields['comment'];
+	$myauthor_field = $fields['author'];
+	$myemail_field = $fields['email'];
+	$myurl_field = $fields['url'];
+ 
+	unset( $fields['comment'], $fields['author'], $fields['email'], $fields['url'] );
+ 
+	// заново добавляем поля в форму в нужном порядке
+	$fields['author'] = $myauthor_field;
+	$fields['email'] = $myemail_field;
+	$fields['comment'] = $mycomment_field;
+ 
+	return $fields;
+}
+ 
+add_filter( 'comment_form_fields', 'all_commentfields' );
 ?>

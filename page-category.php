@@ -38,7 +38,7 @@
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="category__item">
                             <div class="category__img">
-                                <?php if (has_post_thumbnail()) echo '<a href="'.get_permalink().'"><img class=category__picture" src="'.wp_get_attachment_image_url(get_post_thumbnail_id(),'large').'"></a>'; ?>
+                                <?php if (has_post_thumbnail()) echo '<a href="'.get_permalink().'"><img class=category__picture" src="'.wp_get_attachment_image_url(get_post_thumbnail_id(),'medium').'"></a>'; ?>
                             </div>
                             <div class="category__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                             <?php if ($category_excerpt = get_field('excerpt')): ?>

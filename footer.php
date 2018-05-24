@@ -2,9 +2,7 @@
         <div class="container">
             <div class="msbottom__inner msbottom__inner_last">
                 <div class="msbottom__item msbottom__social msbottom__social_last">
-                    <?php if ($soc_link = get_field('option_google', 'option')): ?>
-                        <a href="<?php echo $soc_link; ?>" class="msbottom__social_link"><i class="fa fa-google-plus"></i></a>
-                    <?php endif; ?>
+                   
                     <?php if ($soc_link = get_field('option_youtube', 'option')): ?>
                         <a href="<?php echo $soc_link; ?>" class="msbottom__social_link"><i class="fa fa-youtube"></i></a>
                     <?php endif; ?>
@@ -54,7 +52,7 @@
                  ?>
             </div>
             <div class="copyright">
-                © 2017 ООО "ПИК Кемикалс" (PEAK Chemicals, LLC). Все права защищены. FINAL CHARGE, FLEET CHARGE, BlueDEF, THERMAL CHARGE, PEAK и логотип PEAK являются товарными знаками, принадлежащими компании Old World Industries, LLC.
+                © 2018 ООО "ПИК Кемикалс" (PEAK Chemicals, LLC). Все права защищены. FINAL CHARGE, FLEET CHARGE, BlueDEF, THERMAL CHARGE, PEAK и логотип PEAK являются товарными знаками, принадлежащими компании Old World Industries, LLC.
             </div>
         </div>
     </div>

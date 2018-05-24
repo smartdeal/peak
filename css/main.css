@@ -4953,6 +4953,15 @@ li {
   list-style-position: inside;
   list-style: none; }
 
+.page__content .content__body .polit ul {
+  margin: 10px 0 10px 15px;
+}
+.page__content .content__body .polit ul li {
+  list-style: disc; 
+  list-style-position: inside;
+  padding: 3px 0
+}
+ 
 .input, .btn-submit, input[type=submit], .wpcf7-submit, input[type=text],
 input[type=email], .wpcf7-form-control {
   font-size: 16px;
@@ -5125,7 +5134,7 @@ input[type=email], .wpcf7-form-control {
   margin: 0; }
   @media (min-width: 1200px) {
     .navbar_peak {
-      font-size: 16px; } }
+      font-size: 15px; } }
   .navbar_peak .navbar-header {
     float: left;
     z-index: 1;
@@ -5190,7 +5199,7 @@ input[type=email], .wpcf7-form-control {
       border: 1px solid yellow;
       border-radius: 3px; }
     .navbar_peak #menu-glavnoe > .menu-item {
-      position: static; }
+      position: static; font-weight: bold; text-transform: uppercase;}
       .navbar_peak #menu-glavnoe > .menu-item .menu__row {
         flex: 1 0 25%; }
       .navbar_peak #menu-glavnoe > .menu-item > .dropdown-menu {

@@ -21,7 +21,7 @@
                 <div class="content__list content__list_archive">
                 <?php if (have_posts()) {while (have_posts()) { the_post(); ?>        
                     <div class="content__item" itemscope itemtype="http://schema.org/Article">
-                        <?php if (has_post_thumbnail()) echo '<div class="content__img content__img_archive" style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(),'large') .');"><a href="'.get_permalink().'"></a></div>'; ?>
+                        <?php if (has_post_thumbnail()) echo '<div class="content__img content__img_archive" style="background-image: url('. wp_get_attachment_image_url(get_post_thumbnail_id(),'thumb720') .');"><a href="'.get_permalink().'"></a></div>'; ?>
                         <div class="content__txt">
                             <div class="content__desc content__desc_archive">
                                 <div class="content__title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>

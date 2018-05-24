@@ -55,6 +55,7 @@
 .form_contacts {
     max-width: 590px;
     margin: 0 auto;
+	margin-bottom: 50px;
     .wpcf7-form-control-wrap {
         @include mn768 {
             max-width: none;
@@ -106,6 +107,7 @@
 .pform {
     background: $blue;
     max-width: 400px;
+	color: #fff;
     &__title {
         font-size: 30px;
         text-align: center;

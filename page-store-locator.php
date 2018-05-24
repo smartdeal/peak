@@ -25,7 +25,7 @@
                             <?php while ( have_rows('where_shops') ) : the_row(); ?>
                                 <div class="b-logos__item">
                                     <?php if (get_sub_field('where_link')): ?>
-                                        <a class="b-logos__link" href="<?php the_sub_field('where_link'); ?>" rel="nofollow">
+                                        <a class="b-logos__link" href="<?php the_sub_field('where_link'); ?>" target = "_blank" rel="nofollow">
                                             <div class="b-logos__img">
                                                 <img src="<?php echo get_sub_field('where_logo')['sizes']['medium']; ?>" alt="">
                                             </div>
@@ -51,7 +51,7 @@
                             <?php while ( have_rows('where_store') ) : the_row(); ?>
                                 <div class="b-logos__item">
                                     <?php if (get_sub_field('where_link')): ?>
-                                        <a class="b-logos__link" href="<?php the_sub_field('where_link'); ?>" rel="nofollow">
+                                        <a class="b-logos__link" href="<?php the_sub_field('where_link'); ?>" target = "_blank" rel="nofollow">
                                             <div class="b-logos__img">
                                                 <img src="<?php echo get_sub_field('where_logo')['sizes']['medium']; ?>" alt="">
                                             </div>
